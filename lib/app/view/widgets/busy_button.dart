@@ -53,7 +53,9 @@ class _BusyButtonState extends State<BusyButton> {
         ),
         child: Center(
           child: widget.loading
-              ? const CupertinoActivityIndicator()
+              ? const CupertinoActivityIndicator(
+                  color: AppColors.kWhite,
+                )
               : TextRegular(
                   widget.title,
                   fontSize: widget.fontSize,

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:primedehealth/core/constants/app_colors.dart';
 import 'package:primedehealth/core/constants/navigators/router.dart';
 import 'package:primedehealth/core/constants/navigators/routes.dart';
+import 'package:primedehealth/core/dependency_injection/injection.dart';
+import 'package:primedehealth/features/onboarding/presentation/provider/login_provider.dart';
 
 import 'package:provider/provider.dart';
 
@@ -24,32 +26,30 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        return
-            // MultiProvider(
-            //   providers: [
-            //     ChangeNotifierProvider(
-            //       create: (_) => sl<GetUsersProvider>(),
-            //     ),
-            //   ],
-            MaterialApp(
-          debugShowCheckedModeBanner: false,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
-          onGenerateRoute: generateRoute,
-          theme: ThemeData(
-            scaffoldBackgroundColor: AppColors.kWhite,
-            appBarTheme: const AppBarTheme(
-              color: AppColors.kWhite,
-            ),
-            primaryColor: AppColors.kPrimary,
-            colorScheme: ColorScheme.fromSwatch(
-              accentColor: AppColors.kPrimary,
-            ),
-            useMaterial3: true,
-          ),
-          initialRoute: RouteName.splash,
-        );
-        // );
+        return MultiProvider(
+            providers: [
+              ChangeNotifierProvider(
+                create: (_) => sl<OnboardingProvider>(),
+              ),
+            ],
+            child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              locale: DevicePreview.locale(context),
+              builder: DevicePreview.appBuilder,
+              onGenerateRoute: generateRoute,
+              theme: ThemeData(
+                scaffoldBackgroundColor: AppColors.kWhite,
+                appBarTheme: const AppBarTheme(
+                  color: AppColors.kWhite,
+                ),
+                primaryColor: AppColors.kPrimary,
+                colorScheme: ColorScheme.fromSwatch(
+                  accentColor: AppColors.kPrimary,
+                ),
+                useMaterial3: true,
+              ),
+              initialRoute: RouteName.splash,
+            ));
       },
     );
   }

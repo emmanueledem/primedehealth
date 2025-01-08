@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$primedehealth {
+mixin _$primedehealthException {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) server,
@@ -43,43 +43,48 @@ mixin _$primedehealth {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$primedehealthServerException value) server,
-    required TResult Function(_$primedehealthNoInternetException value)
+    required TResult Function(_$primedehealthExceptionServerException value)
+        server,
+    required TResult Function(_$primedehealthExceptionNoInternetException value)
         noInternet,
-    required TResult Function(_$primedehealthAppException value) app,
-    required TResult Function(_$primedehealthUnknownException value) unknown,
+    required TResult Function(_$primedehealthExceptionAppException value) app,
+    required TResult Function(_$primedehealthExceptionUnknownException value)
+        unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$primedehealthServerException value)? server,
-    TResult? Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult? Function(_$primedehealthAppException value)? app,
-    TResult? Function(_$primedehealthUnknownException value)? unknown,
+    TResult? Function(_$primedehealthExceptionServerException value)? server,
+    TResult? Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult? Function(_$primedehealthExceptionAppException value)? app,
+    TResult? Function(_$primedehealthExceptionUnknownException value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$primedehealthServerException value)? server,
-    TResult Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult Function(_$primedehealthAppException value)? app,
-    TResult Function(_$primedehealthUnknownException value)? unknown,
+    TResult Function(_$primedehealthExceptionServerException value)? server,
+    TResult Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult Function(_$primedehealthExceptionAppException value)? app,
+    TResult Function(_$primedehealthExceptionUnknownException value)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $primedehealthCopyWith<$Res> {
-  factory $primedehealthCopyWith(
-          primedehealth value, $Res Function(primedehealth) then) =
-      _$primedehealthCopyWithImpl<$Res, primedehealth>;
+abstract class $primedehealthExceptionCopyWith<$Res> {
+  factory $primedehealthExceptionCopyWith(primedehealthException value,
+          $Res Function(primedehealthException) then) =
+      _$primedehealthExceptionCopyWithImpl<$Res, primedehealthException>;
 }
 
 /// @nodoc
-class _$primedehealthCopyWithImpl<$Res, $Val extends primedehealth>
-    implements $primedehealthCopyWith<$Res> {
-  _$primedehealthCopyWithImpl(this._value, this._then);
+class _$primedehealthExceptionCopyWithImpl<$Res,
+        $Val extends primedehealthException>
+    implements $primedehealthExceptionCopyWith<$Res> {
+  _$primedehealthExceptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,23 +93,23 @@ class _$primedehealthCopyWithImpl<$Res, $Val extends primedehealth>
 }
 
 /// @nodoc
-abstract class _$$$primedehealthServerExceptionImplCopyWith<$Res> {
-  factory _$$$primedehealthServerExceptionImplCopyWith(
-          _$$primedehealthServerExceptionImpl value,
-          $Res Function(_$$primedehealthServerExceptionImpl) then) =
-      __$$$primedehealthServerExceptionImplCopyWithImpl<$Res>;
+abstract class _$$$primedehealthExceptionServerExceptionImplCopyWith<$Res> {
+  factory _$$$primedehealthExceptionServerExceptionImplCopyWith(
+          _$$primedehealthExceptionServerExceptionImpl value,
+          $Res Function(_$$primedehealthExceptionServerExceptionImpl) then) =
+      __$$$primedehealthExceptionServerExceptionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$$primedehealthServerExceptionImplCopyWithImpl<$Res>
-    extends _$primedehealthCopyWithImpl<$Res,
-        _$$primedehealthServerExceptionImpl>
-    implements _$$$primedehealthServerExceptionImplCopyWith<$Res> {
-  __$$$primedehealthServerExceptionImplCopyWithImpl(
-      _$$primedehealthServerExceptionImpl _value,
-      $Res Function(_$$primedehealthServerExceptionImpl) _then)
+class __$$$primedehealthExceptionServerExceptionImplCopyWithImpl<$Res>
+    extends _$primedehealthExceptionCopyWithImpl<$Res,
+        _$$primedehealthExceptionServerExceptionImpl>
+    implements _$$$primedehealthExceptionServerExceptionImplCopyWith<$Res> {
+  __$$$primedehealthExceptionServerExceptionImplCopyWithImpl(
+      _$$primedehealthExceptionServerExceptionImpl _value,
+      $Res Function(_$$primedehealthExceptionServerExceptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +117,7 @@ class __$$$primedehealthServerExceptionImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$$primedehealthServerExceptionImpl(
+    return _then(_$$primedehealthExceptionServerExceptionImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -123,23 +128,23 @@ class __$$$primedehealthServerExceptionImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$$primedehealthServerExceptionImpl
-    implements _$primedehealthServerException {
-  const _$$primedehealthServerExceptionImpl(this.message);
+class _$$primedehealthExceptionServerExceptionImpl
+    implements _$primedehealthExceptionServerException {
+  const _$$primedehealthExceptionServerExceptionImpl(this.message);
 
   @override
   final String message;
 
   @override
   String toString() {
-    return 'primedehealth.server(message: $message)';
+    return 'primedehealthException.server(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$$primedehealthServerExceptionImpl &&
+            other is _$$primedehealthExceptionServerExceptionImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -149,10 +154,11 @@ class _$$primedehealthServerExceptionImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$$primedehealthServerExceptionImplCopyWith<
-          _$$primedehealthServerExceptionImpl>
-      get copyWith => __$$$primedehealthServerExceptionImplCopyWithImpl<
-          _$$primedehealthServerExceptionImpl>(this, _$identity);
+  _$$$primedehealthExceptionServerExceptionImplCopyWith<
+          _$$primedehealthExceptionServerExceptionImpl>
+      get copyWith =>
+          __$$$primedehealthExceptionServerExceptionImplCopyWithImpl<
+              _$$primedehealthExceptionServerExceptionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -194,11 +200,13 @@ class _$$primedehealthServerExceptionImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$primedehealthServerException value) server,
-    required TResult Function(_$primedehealthNoInternetException value)
+    required TResult Function(_$primedehealthExceptionServerException value)
+        server,
+    required TResult Function(_$primedehealthExceptionNoInternetException value)
         noInternet,
-    required TResult Function(_$primedehealthAppException value) app,
-    required TResult Function(_$primedehealthUnknownException value) unknown,
+    required TResult Function(_$primedehealthExceptionAppException value) app,
+    required TResult Function(_$primedehealthExceptionUnknownException value)
+        unknown,
   }) {
     return server(this);
   }
@@ -206,10 +214,11 @@ class _$$primedehealthServerExceptionImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$primedehealthServerException value)? server,
-    TResult? Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult? Function(_$primedehealthAppException value)? app,
-    TResult? Function(_$primedehealthUnknownException value)? unknown,
+    TResult? Function(_$primedehealthExceptionServerException value)? server,
+    TResult? Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult? Function(_$primedehealthExceptionAppException value)? app,
+    TResult? Function(_$primedehealthExceptionUnknownException value)? unknown,
   }) {
     return server?.call(this);
   }
@@ -217,10 +226,11 @@ class _$$primedehealthServerExceptionImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$primedehealthServerException value)? server,
-    TResult Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult Function(_$primedehealthAppException value)? app,
-    TResult Function(_$primedehealthUnknownException value)? unknown,
+    TResult Function(_$primedehealthExceptionServerException value)? server,
+    TResult Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult Function(_$primedehealthExceptionAppException value)? app,
+    TResult Function(_$primedehealthExceptionUnknownException value)? unknown,
     required TResult orElse(),
   }) {
     if (server != null) {
@@ -230,52 +240,54 @@ class _$$primedehealthServerExceptionImpl
   }
 }
 
-abstract class _$primedehealthServerException implements primedehealth {
-  const factory _$primedehealthServerException(final String message) =
-      _$$primedehealthServerExceptionImpl;
+abstract class _$primedehealthExceptionServerException
+    implements primedehealthException {
+  const factory _$primedehealthExceptionServerException(final String message) =
+      _$$primedehealthExceptionServerExceptionImpl;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$$primedehealthServerExceptionImplCopyWith<
-          _$$primedehealthServerExceptionImpl>
+  _$$$primedehealthExceptionServerExceptionImplCopyWith<
+          _$$primedehealthExceptionServerExceptionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$$primedehealthNoInternetExceptionImplCopyWith<$Res> {
-  factory _$$$primedehealthNoInternetExceptionImplCopyWith(
-          _$$primedehealthNoInternetExceptionImpl value,
-          $Res Function(_$$primedehealthNoInternetExceptionImpl) then) =
-      __$$$primedehealthNoInternetExceptionImplCopyWithImpl<$Res>;
+abstract class _$$$primedehealthExceptionNoInternetExceptionImplCopyWith<$Res> {
+  factory _$$$primedehealthExceptionNoInternetExceptionImplCopyWith(
+          _$$primedehealthExceptionNoInternetExceptionImpl value,
+          $Res Function(_$$primedehealthExceptionNoInternetExceptionImpl)
+              then) =
+      __$$$primedehealthExceptionNoInternetExceptionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$$primedehealthNoInternetExceptionImplCopyWithImpl<$Res>
-    extends _$primedehealthCopyWithImpl<$Res,
-        _$$primedehealthNoInternetExceptionImpl>
-    implements _$$$primedehealthNoInternetExceptionImplCopyWith<$Res> {
-  __$$$primedehealthNoInternetExceptionImplCopyWithImpl(
-      _$$primedehealthNoInternetExceptionImpl _value,
-      $Res Function(_$$primedehealthNoInternetExceptionImpl) _then)
+class __$$$primedehealthExceptionNoInternetExceptionImplCopyWithImpl<$Res>
+    extends _$primedehealthExceptionCopyWithImpl<$Res,
+        _$$primedehealthExceptionNoInternetExceptionImpl>
+    implements _$$$primedehealthExceptionNoInternetExceptionImplCopyWith<$Res> {
+  __$$$primedehealthExceptionNoInternetExceptionImplCopyWithImpl(
+      _$$primedehealthExceptionNoInternetExceptionImpl _value,
+      $Res Function(_$$primedehealthExceptionNoInternetExceptionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$$primedehealthNoInternetExceptionImpl
-    implements _$primedehealthNoInternetException {
-  const _$$primedehealthNoInternetExceptionImpl();
+class _$$primedehealthExceptionNoInternetExceptionImpl
+    implements _$primedehealthExceptionNoInternetException {
+  const _$$primedehealthExceptionNoInternetExceptionImpl();
 
   @override
   String toString() {
-    return 'primedehealth.noInternet()';
+    return 'primedehealthException.noInternet()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$$primedehealthNoInternetExceptionImpl);
+            other is _$$primedehealthExceptionNoInternetExceptionImpl);
   }
 
   @override
@@ -321,11 +333,13 @@ class _$$primedehealthNoInternetExceptionImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$primedehealthServerException value) server,
-    required TResult Function(_$primedehealthNoInternetException value)
+    required TResult Function(_$primedehealthExceptionServerException value)
+        server,
+    required TResult Function(_$primedehealthExceptionNoInternetException value)
         noInternet,
-    required TResult Function(_$primedehealthAppException value) app,
-    required TResult Function(_$primedehealthUnknownException value) unknown,
+    required TResult Function(_$primedehealthExceptionAppException value) app,
+    required TResult Function(_$primedehealthExceptionUnknownException value)
+        unknown,
   }) {
     return noInternet(this);
   }
@@ -333,10 +347,11 @@ class _$$primedehealthNoInternetExceptionImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$primedehealthServerException value)? server,
-    TResult? Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult? Function(_$primedehealthAppException value)? app,
-    TResult? Function(_$primedehealthUnknownException value)? unknown,
+    TResult? Function(_$primedehealthExceptionServerException value)? server,
+    TResult? Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult? Function(_$primedehealthExceptionAppException value)? app,
+    TResult? Function(_$primedehealthExceptionUnknownException value)? unknown,
   }) {
     return noInternet?.call(this);
   }
@@ -344,10 +359,11 @@ class _$$primedehealthNoInternetExceptionImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$primedehealthServerException value)? server,
-    TResult Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult Function(_$primedehealthAppException value)? app,
-    TResult Function(_$primedehealthUnknownException value)? unknown,
+    TResult Function(_$primedehealthExceptionServerException value)? server,
+    TResult Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult Function(_$primedehealthExceptionAppException value)? app,
+    TResult Function(_$primedehealthExceptionUnknownException value)? unknown,
     required TResult orElse(),
   }) {
     if (noInternet != null) {
@@ -357,28 +373,30 @@ class _$$primedehealthNoInternetExceptionImpl
   }
 }
 
-abstract class _$primedehealthNoInternetException implements primedehealth {
-  const factory _$primedehealthNoInternetException() =
-      _$$primedehealthNoInternetExceptionImpl;
+abstract class _$primedehealthExceptionNoInternetException
+    implements primedehealthException {
+  const factory _$primedehealthExceptionNoInternetException() =
+      _$$primedehealthExceptionNoInternetExceptionImpl;
 }
 
 /// @nodoc
-abstract class _$$$primedehealthAppExceptionImplCopyWith<$Res> {
-  factory _$$$primedehealthAppExceptionImplCopyWith(
-          _$$primedehealthAppExceptionImpl value,
-          $Res Function(_$$primedehealthAppExceptionImpl) then) =
-      __$$$primedehealthAppExceptionImplCopyWithImpl<$Res>;
+abstract class _$$$primedehealthExceptionAppExceptionImplCopyWith<$Res> {
+  factory _$$$primedehealthExceptionAppExceptionImplCopyWith(
+          _$$primedehealthExceptionAppExceptionImpl value,
+          $Res Function(_$$primedehealthExceptionAppExceptionImpl) then) =
+      __$$$primedehealthExceptionAppExceptionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$$primedehealthAppExceptionImplCopyWithImpl<$Res>
-    extends _$primedehealthCopyWithImpl<$Res, _$$primedehealthAppExceptionImpl>
-    implements _$$$primedehealthAppExceptionImplCopyWith<$Res> {
-  __$$$primedehealthAppExceptionImplCopyWithImpl(
-      _$$primedehealthAppExceptionImpl _value,
-      $Res Function(_$$primedehealthAppExceptionImpl) _then)
+class __$$$primedehealthExceptionAppExceptionImplCopyWithImpl<$Res>
+    extends _$primedehealthExceptionCopyWithImpl<$Res,
+        _$$primedehealthExceptionAppExceptionImpl>
+    implements _$$$primedehealthExceptionAppExceptionImplCopyWith<$Res> {
+  __$$$primedehealthExceptionAppExceptionImplCopyWithImpl(
+      _$$primedehealthExceptionAppExceptionImpl _value,
+      $Res Function(_$$primedehealthExceptionAppExceptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -386,7 +404,7 @@ class __$$$primedehealthAppExceptionImplCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$$primedehealthAppExceptionImpl(
+    return _then(_$$primedehealthExceptionAppExceptionImpl(
       freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -397,22 +415,23 @@ class __$$$primedehealthAppExceptionImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$$primedehealthAppExceptionImpl implements _$primedehealthAppException {
-  const _$$primedehealthAppExceptionImpl(this.message);
+class _$$primedehealthExceptionAppExceptionImpl
+    implements _$primedehealthExceptionAppException {
+  const _$$primedehealthExceptionAppExceptionImpl(this.message);
 
   @override
   final String? message;
 
   @override
   String toString() {
-    return 'primedehealth.app(message: $message)';
+    return 'primedehealthException.app(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$$primedehealthAppExceptionImpl &&
+            other is _$$primedehealthExceptionAppExceptionImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -422,9 +441,10 @@ class _$$primedehealthAppExceptionImpl implements _$primedehealthAppException {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$$primedehealthAppExceptionImplCopyWith<_$$primedehealthAppExceptionImpl>
-      get copyWith => __$$$primedehealthAppExceptionImplCopyWithImpl<
-          _$$primedehealthAppExceptionImpl>(this, _$identity);
+  _$$$primedehealthExceptionAppExceptionImplCopyWith<
+          _$$primedehealthExceptionAppExceptionImpl>
+      get copyWith => __$$$primedehealthExceptionAppExceptionImplCopyWithImpl<
+          _$$primedehealthExceptionAppExceptionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -466,11 +486,13 @@ class _$$primedehealthAppExceptionImpl implements _$primedehealthAppException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$primedehealthServerException value) server,
-    required TResult Function(_$primedehealthNoInternetException value)
+    required TResult Function(_$primedehealthExceptionServerException value)
+        server,
+    required TResult Function(_$primedehealthExceptionNoInternetException value)
         noInternet,
-    required TResult Function(_$primedehealthAppException value) app,
-    required TResult Function(_$primedehealthUnknownException value) unknown,
+    required TResult Function(_$primedehealthExceptionAppException value) app,
+    required TResult Function(_$primedehealthExceptionUnknownException value)
+        unknown,
   }) {
     return app(this);
   }
@@ -478,10 +500,11 @@ class _$$primedehealthAppExceptionImpl implements _$primedehealthAppException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$primedehealthServerException value)? server,
-    TResult? Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult? Function(_$primedehealthAppException value)? app,
-    TResult? Function(_$primedehealthUnknownException value)? unknown,
+    TResult? Function(_$primedehealthExceptionServerException value)? server,
+    TResult? Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult? Function(_$primedehealthExceptionAppException value)? app,
+    TResult? Function(_$primedehealthExceptionUnknownException value)? unknown,
   }) {
     return app?.call(this);
   }
@@ -489,10 +512,11 @@ class _$$primedehealthAppExceptionImpl implements _$primedehealthAppException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$primedehealthServerException value)? server,
-    TResult Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult Function(_$primedehealthAppException value)? app,
-    TResult Function(_$primedehealthUnknownException value)? unknown,
+    TResult Function(_$primedehealthExceptionServerException value)? server,
+    TResult Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult Function(_$primedehealthExceptionAppException value)? app,
+    TResult Function(_$primedehealthExceptionUnknownException value)? unknown,
     required TResult orElse(),
   }) {
     if (app != null) {
@@ -502,51 +526,53 @@ class _$$primedehealthAppExceptionImpl implements _$primedehealthAppException {
   }
 }
 
-abstract class _$primedehealthAppException implements primedehealth {
-  const factory _$primedehealthAppException(final String? message) =
-      _$$primedehealthAppExceptionImpl;
+abstract class _$primedehealthExceptionAppException
+    implements primedehealthException {
+  const factory _$primedehealthExceptionAppException(final String? message) =
+      _$$primedehealthExceptionAppExceptionImpl;
 
   String? get message;
   @JsonKey(ignore: true)
-  _$$$primedehealthAppExceptionImplCopyWith<_$$primedehealthAppExceptionImpl>
+  _$$$primedehealthExceptionAppExceptionImplCopyWith<
+          _$$primedehealthExceptionAppExceptionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$$primedehealthUnknownExceptionImplCopyWith<$Res> {
-  factory _$$$primedehealthUnknownExceptionImplCopyWith(
-          _$$primedehealthUnknownExceptionImpl value,
-          $Res Function(_$$primedehealthUnknownExceptionImpl) then) =
-      __$$$primedehealthUnknownExceptionImplCopyWithImpl<$Res>;
+abstract class _$$$primedehealthExceptionUnknownExceptionImplCopyWith<$Res> {
+  factory _$$$primedehealthExceptionUnknownExceptionImplCopyWith(
+          _$$primedehealthExceptionUnknownExceptionImpl value,
+          $Res Function(_$$primedehealthExceptionUnknownExceptionImpl) then) =
+      __$$$primedehealthExceptionUnknownExceptionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$$primedehealthUnknownExceptionImplCopyWithImpl<$Res>
-    extends _$primedehealthCopyWithImpl<$Res,
-        _$$primedehealthUnknownExceptionImpl>
-    implements _$$$primedehealthUnknownExceptionImplCopyWith<$Res> {
-  __$$$primedehealthUnknownExceptionImplCopyWithImpl(
-      _$$primedehealthUnknownExceptionImpl _value,
-      $Res Function(_$$primedehealthUnknownExceptionImpl) _then)
+class __$$$primedehealthExceptionUnknownExceptionImplCopyWithImpl<$Res>
+    extends _$primedehealthExceptionCopyWithImpl<$Res,
+        _$$primedehealthExceptionUnknownExceptionImpl>
+    implements _$$$primedehealthExceptionUnknownExceptionImplCopyWith<$Res> {
+  __$$$primedehealthExceptionUnknownExceptionImplCopyWithImpl(
+      _$$primedehealthExceptionUnknownExceptionImpl _value,
+      $Res Function(_$$primedehealthExceptionUnknownExceptionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$$primedehealthUnknownExceptionImpl
-    implements _$primedehealthUnknownException {
-  const _$$primedehealthUnknownExceptionImpl();
+class _$$primedehealthExceptionUnknownExceptionImpl
+    implements _$primedehealthExceptionUnknownException {
+  const _$$primedehealthExceptionUnknownExceptionImpl();
 
   @override
   String toString() {
-    return 'primedehealth.unknown()';
+    return 'primedehealthException.unknown()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$$primedehealthUnknownExceptionImpl);
+            other is _$$primedehealthExceptionUnknownExceptionImpl);
   }
 
   @override
@@ -592,11 +618,13 @@ class _$$primedehealthUnknownExceptionImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$primedehealthServerException value) server,
-    required TResult Function(_$primedehealthNoInternetException value)
+    required TResult Function(_$primedehealthExceptionServerException value)
+        server,
+    required TResult Function(_$primedehealthExceptionNoInternetException value)
         noInternet,
-    required TResult Function(_$primedehealthAppException value) app,
-    required TResult Function(_$primedehealthUnknownException value) unknown,
+    required TResult Function(_$primedehealthExceptionAppException value) app,
+    required TResult Function(_$primedehealthExceptionUnknownException value)
+        unknown,
   }) {
     return unknown(this);
   }
@@ -604,10 +632,11 @@ class _$$primedehealthUnknownExceptionImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$primedehealthServerException value)? server,
-    TResult? Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult? Function(_$primedehealthAppException value)? app,
-    TResult? Function(_$primedehealthUnknownException value)? unknown,
+    TResult? Function(_$primedehealthExceptionServerException value)? server,
+    TResult? Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult? Function(_$primedehealthExceptionAppException value)? app,
+    TResult? Function(_$primedehealthExceptionUnknownException value)? unknown,
   }) {
     return unknown?.call(this);
   }
@@ -615,10 +644,11 @@ class _$$primedehealthUnknownExceptionImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$primedehealthServerException value)? server,
-    TResult Function(_$primedehealthNoInternetException value)? noInternet,
-    TResult Function(_$primedehealthAppException value)? app,
-    TResult Function(_$primedehealthUnknownException value)? unknown,
+    TResult Function(_$primedehealthExceptionServerException value)? server,
+    TResult Function(_$primedehealthExceptionNoInternetException value)?
+        noInternet,
+    TResult Function(_$primedehealthExceptionAppException value)? app,
+    TResult Function(_$primedehealthExceptionUnknownException value)? unknown,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -628,7 +658,8 @@ class _$$primedehealthUnknownExceptionImpl
   }
 }
 
-abstract class _$primedehealthUnknownException implements primedehealth {
-  const factory _$primedehealthUnknownException() =
-      _$$primedehealthUnknownExceptionImpl;
+abstract class _$primedehealthExceptionUnknownException
+    implements primedehealthException {
+  const factory _$primedehealthExceptionUnknownException() =
+      _$$primedehealthExceptionUnknownExceptionImpl;
 }

@@ -1,5 +1,5 @@
 class AssetsImages {
-  static const String userIcon = 'assets/icons/profile_circle.svg';
+  static const String userIcon = 'assets/icons/profile_icon.svg';
   static const String backIcon = 'assets/icons/user_icon.svg';
   static const String appIcon = 'assets/images/appIcon.png';
   static const String eye = 'assets/icons/eye.svg';

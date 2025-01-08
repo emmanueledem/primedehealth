@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:primedehealth/core/constants/navigators/routes.dart';
-import 'package:primedehealth/features/onboarding/login_screen.dart';
-import 'package:primedehealth/features/onboarding/splash_screen.dart';
+import 'package:primedehealth/features/onboarding/presentation/pages/login_screen.dart';
+import 'package:primedehealth/features/onboarding/presentation/pages/splash_screen.dart';
+import 'package:primedehealth/features/products/home_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -15,6 +16,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(
         routeName: settings.name!,
         viewToShow: const LogginScreen(),
+      );
+
+    case RouteName.home:
+      return _getPageRoute(
+        routeName: settings.name!,
+        viewToShow: const HomeScreen(),
       );
 
     default:

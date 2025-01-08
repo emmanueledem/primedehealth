@@ -2,24 +2,26 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'error.freezed.dart';
 
-/// [primedehealth] is thrown when there is a server error.
+/// [primedehealthException] is thrown when there is a server error.
 @freezed
-class primedehealth with _$primedehealth implements Exception {
-  /// [primedehealth.server] is thrown when there is a server error.
-  const factory primedehealth.server(String message) =
-      _$primedehealthServerException;
+class primedehealthException
+    with _$primedehealthException
+    implements Exception {
+  /// [primedehealthException.server] is thrown when there is a server error.
+  const factory primedehealthException.server(String message) =
+      _$primedehealthExceptionServerException;
 
-  /// [primedehealth.noInternet] is thrown when there
+  /// [primedehealthException.noInternet] is thrown when there
   /// is no internet connection.
-  const factory primedehealth.noInternet() =
-      _$primedehealthNoInternetException;
+  const factory primedehealthException.noInternet() =
+      _$primedehealthExceptionNoInternetException;
 
-  /// [primedehealth.app] is thrown when there
+  /// [primedehealthException.app] is thrown when there
   /// is an error in the app.
-  const factory primedehealth.app(String? message) =
-      _$primedehealthAppException;
+  const factory primedehealthException.app(String? message) =
+      _$primedehealthExceptionAppException;
 
-  /// [primedehealth.unknown] is thrown when there is an unknown error.
-  const factory primedehealth.unknown() =
-      _$primedehealthUnknownException;
+  /// [primedehealthException.unknown] is thrown when there is an unknown error.
+  const factory primedehealthException.unknown() =
+      _$primedehealthExceptionUnknownException;
 }

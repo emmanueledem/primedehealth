@@ -11,7 +11,10 @@ import 'package:primedehealth/app/view/widgets/custom_text_field.dart';
 import 'package:primedehealth/core/constants/app_assets.dart';
 import 'package:primedehealth/core/constants/app_colors.dart';
 import 'package:primedehealth/core/constants/fonts.dart';
+import 'package:primedehealth/core/enums/app_state.dart';
 import 'package:primedehealth/core/utils/custom_form_validator.dart';
+import 'package:primedehealth/features/onboarding/presentation/provider/login_provider.dart';
+import 'package:provider/provider.dart';
 
 class LogginScreen extends StatefulWidget {
   const LogginScreen({super.key});
@@ -26,7 +29,6 @@ class _LogginScreenState extends State<LogginScreen> {
 
   bool isChecked = false;
   final _emailController = TextEditingController();
-  final _phoneNumberController = TextEditingController();
   final _passwordController = TextEditingController();
 
   late StreamController<String> passwordStreamController;
@@ -86,9 +88,8 @@ class _LogginScreenState extends State<LogginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Container(
+        child: Consumer<OnboardingProvider>(builder: (context, value, child) {
+          return Container(
             decoration: BoxDecoration(
               color: AppColors.kWhite,
               borderRadius: BorderRadius.circular(4),
@@ -104,13 +105,14 @@ class _LogginScreenState extends State<LogginScreen> {
                     width: 170,
                   )),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   TextBold(
                     'Login',
                     fontWeight: FontWeight.w600,
                     textAlign: TextAlign.center,
                     color: AppColors.kBlack,
+                    fontSize: 20,
                   ),
                   const SizedBox(
                     height: 8,
@@ -230,28 +232,16 @@ class _LogginScreenState extends State<LogginScreen> {
                       child,
                     ) {
                       return BusyButton(
-                        title: 'Continue',
-
-                        onpress: () async {
-                          // await context
-                          //     .read<PersonalLogginScreenCubit>()
-                          //     .personalLogginScreen(
-                          //       context,
-                          //       passCode: _passwordController.text.trim(),
-                          //       userName: selectedAccountType ==
-                          //               LogginScreenAccountType.business
-                          //           ? _emailController.text.trim()
-                          //           : _phoneNumberController.text.trim(),
-                          //       deviceType: deviceType,
-                          //       accountType: selectedAccountType ==
-                          //               LogginScreenAccountType.business
-                          //           ? 'BUSSINESS'
-                          //           : 'PERSONAL',
-                          //     );
-                        },
-                        deactivate: !canSubmit,
-                        // loading: ,
-                      );
+                          title: 'Continue',
+                          onpress: () async {
+                            await context.read<OnboardingProvider>().Login(
+                                  context,
+                                  email: _emailController.text.trim(),
+                                  password: _passwordController.text.trim(),
+                                );
+                          },
+                          deactivate: !canSubmit,
+                          loading: value.state == AppState.busy);
                     },
                   ),
                   const SizedBox(
@@ -287,8 +277,8 @@ class _LogginScreenState extends State<LogginScreen> {
                 ],
               ),
             ),
-          ),
-        ),
+          );
+        }),
       ),
     );
   }
