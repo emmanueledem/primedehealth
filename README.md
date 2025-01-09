@@ -14,5 +14,5 @@ git clone https://github.com/emmanueledem/primedehealth.git
 
 Kindly insert the following details in order to gain access to the app from the login screen
 
-email = email@gmail.com;
-password = TestAccount;
+email = email@gmail.com
+password = TestAccount
