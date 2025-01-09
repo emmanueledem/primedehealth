@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
         padding: EdgeInsets.all(22),
         child: Consumer<StaffsProvider>(builder: (context, value, child) {
-          return value.state == AppState.busy
+          return value.state == AppState.busy || value.allStaffs == null
               ? Center(child: Loader())
               : RefreshIndicator(
                   color: AppColors.kPrimary,

@@ -44,6 +44,8 @@ class StaffsProvider extends ChangeNotifier {
         return false;
       },
       (r) async {
+        allStaffs = r;
+
         Future.delayed(
           const Duration(seconds: 1),
           () {
@@ -52,7 +54,6 @@ class StaffsProvider extends ChangeNotifier {
           },
         );
 
-        allStaffs = r;
         return true;
       },
     );
