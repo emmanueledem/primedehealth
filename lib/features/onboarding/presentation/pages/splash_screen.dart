@@ -25,7 +25,7 @@ class _SplashScreenViewState extends State<SplashScreenView> {
       () =>
           // userResult.fold((l) {
           navigator.pushReplacementNamed(
-        RouteName.home,
+        RouteName.login,
       )
       // }, (user) {
       //   BlocProvider.of<ChianUserBloc>(context).add(

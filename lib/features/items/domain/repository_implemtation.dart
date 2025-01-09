@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:logger/logger.dart';
 import 'package:primedehealth/core/error/failure.dart';
 import 'package:injectable/injectable.dart';
 import 'package:primedehealth/features/items/data/datasources/data.dart';

@@ -8,7 +8,6 @@ import 'package:primedehealth/features/items/data/model/staff_model.dart';
 import 'package:primedehealth/features/items/domain/usecases/staffs_usecases.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
-import 'package:logger/logger.dart';
 
 @lazySingleton
 class StaffsProvider extends ChangeNotifier {
@@ -46,7 +45,7 @@ class StaffsProvider extends ChangeNotifier {
       },
       (r) async {
         Future.delayed(
-          const Duration(seconds: 2),
+          const Duration(seconds: 1),
           () {
             state = AppState.idle;
             notifyListeners();

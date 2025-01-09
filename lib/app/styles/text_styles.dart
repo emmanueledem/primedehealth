@@ -92,7 +92,7 @@ class HeaderText extends AppTextBase {
             fontSize: fontSize,
             fontFamily: fontFamily,
             fontWeight: fontWeight,
-            color: color ?? AppColors.purple900,
+            color: color ?? AppColors.kPrimary,
           ).merge(style),
           textAlign: textAlign ?? TextAlign.left,
           overflow: overflow ?? TextOverflow.visible,

@@ -5,7 +5,9 @@ import 'package:primedehealth/app/view/widgets/loader.dart';
 import 'package:primedehealth/app/view/widgets/primary_app_bar.dart';
 import 'package:primedehealth/core/constants/app_assets.dart';
 import 'package:primedehealth/core/constants/app_colors.dart';
+import 'package:primedehealth/core/constants/navigators/routes.dart';
 import 'package:primedehealth/core/enums/app_state.dart';
+import 'package:primedehealth/features/items/presentation/pages/view_staff_details.dart';
 import 'package:primedehealth/features/items/presentation/provider/staffs_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -51,50 +53,57 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: value.allStaffs?.length,
                     itemBuilder: (context, index) {
                       final staff = value.allStaffs![index];
-                      return Container(
-                        margin: const EdgeInsets.only(bottom: 6),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            border:
-                                Border.all(color: AppColors.grey200, width: 3)),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 13),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                AssetsImages.userIcon,
-                                height: 40,
-                                width: 40,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  TextBold(
-                                    staff.firstName + ' ' + staff.lastName,
-                                    fontSize: 13,
-                                    color: AppColors.kBlack,
-                                  ),
-                                  const SizedBox(
-                                    height: 2,
-                                  ),
-                                  IntrinsicHeight(
-                                    child: Row(
-                                      children: [
-                                        TextRegular(
-                                          staff.designation,
-                                          fontSize: 10,
-                                          color: AppColors.kBlack,
-                                        ),
-                                      ],
+                      return InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, RouteName.viewStaffDetails,
+                              arguments: ViewStaffDetailsParams(staff: staff));
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 6),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                  color: AppColors.grey200, width: 3)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 13),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  AssetsImages.userIcon,
+                                  height: 40,
+                                  width: 40,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextBold(
+                                      staff.firstName + ' ' + staff.lastName,
+                                      fontSize: 13,
+                                      color: AppColors.kBlack,
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                    const SizedBox(
+                                      height: 2,
+                                    ),
+                                    IntrinsicHeight(
+                                      child: Row(
+                                        children: [
+                                          TextRegular(
+                                            staff.designation,
+                                            fontSize: 10,
+                                            color: AppColors.kBlack,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       );

@@ -45,7 +45,7 @@ class OnboardingProvider extends ChangeNotifier {
       },
       (r) async {
         Future.delayed(
-          const Duration(seconds: 2),
+          const Duration(seconds: 1),
           () {
             state = AppState.idle;
             notifyListeners();
