@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:primedehealth/core/constants/navigators/routes.dart';
 import 'package:primedehealth/features/onboarding/presentation/pages/login_screen.dart';
 import 'package:primedehealth/features/onboarding/presentation/pages/splash_screen.dart';
-import 'package:primedehealth/features/products/home_screen.dart';
+import 'package:primedehealth/features/items/presentation/pages/home_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {

@@ -5,6 +5,7 @@ import 'package:primedehealth/core/constants/app_colors.dart';
 import 'package:primedehealth/core/constants/navigators/router.dart';
 import 'package:primedehealth/core/constants/navigators/routes.dart';
 import 'package:primedehealth/core/dependency_injection/injection.dart';
+import 'package:primedehealth/features/items/presentation/provider/staffs_provider.dart';
 import 'package:primedehealth/features/onboarding/presentation/provider/login_provider.dart';
 
 import 'package:provider/provider.dart';
@@ -30,6 +31,9 @@ class _AppState extends State<App> {
             providers: [
               ChangeNotifierProvider(
                 create: (_) => sl<OnboardingProvider>(),
+              ),
+              ChangeNotifierProvider(
+                create: (_) => sl<StaffsProvider>(),
               ),
             ],
             child: MaterialApp(

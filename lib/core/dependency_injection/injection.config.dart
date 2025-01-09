@@ -12,16 +12,23 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i5;
 import 'package:primedehealth/core/dependency_injection/register_module.dart'
-    as _i11;
+    as _i15;
 import 'package:primedehealth/core/network_info.dart' as _i6;
+import 'package:primedehealth/features/items/domain/repository.dart' as _i9;
+import 'package:primedehealth/features/items/domain/repository_implemtation.dart'
+    as _i10;
+import 'package:primedehealth/features/items/domain/usecases/staffs_usecases.dart'
+    as _i13;
+import 'package:primedehealth/features/items/presentation/provider/staffs_provider.dart'
+    as _i14;
 import 'package:primedehealth/features/onboarding/domain/repository.dart'
     as _i7;
 import 'package:primedehealth/features/onboarding/domain/repository_implementation.dart'
     as _i8;
 import 'package:primedehealth/features/onboarding/domain/usecases/login_usecase.dart'
-    as _i9;
+    as _i11;
 import 'package:primedehealth/features/onboarding/presentation/provider/login_provider.dart'
-    as _i10; // ignore_for_file: unnecessary_lambdas
+    as _i12; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -45,11 +52,16 @@ _i1.GetIt $initGetIt(
       () => _i6.NetworkInfoImpl(get<_i5.InternetConnectionChecker>()));
   gh.lazySingleton<_i7.OnboardingRepository>(
       () => _i8.OnboardingRepositoryImpl());
-  gh.lazySingleton<_i9.LoginUsecase>(
-      () => _i9.LoginUsecase(get<_i7.OnboardingRepository>()));
-  gh.lazySingleton<_i10.OnboardingProvider>(
-      () => _i10.OnboardingProvider(loginUsecase: get<_i9.LoginUsecase>()));
+  gh.lazySingleton<_i9.StaffsRepository>(() => _i10.staffsRepositoryImpl());
+  gh.lazySingleton<_i11.LoginUsecase>(
+      () => _i11.LoginUsecase(get<_i7.OnboardingRepository>()));
+  gh.lazySingleton<_i12.OnboardingProvider>(
+      () => _i12.OnboardingProvider(loginUsecase: get<_i11.LoginUsecase>()));
+  gh.lazySingleton<_i13.StaffUsecase>(
+      () => _i13.StaffUsecase(get<_i9.StaffsRepository>()));
+  gh.lazySingleton<_i14.StaffsProvider>(
+      () => _i14.StaffsProvider(staffUsecase: get<_i13.StaffUsecase>()));
   return get;
 }
 
-class _$RegisterModule extends _i11.RegisterModule {}
+class _$RegisterModule extends _i15.RegisterModule {}

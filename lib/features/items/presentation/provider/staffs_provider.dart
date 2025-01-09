@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 
 import 'package:injectable/injectable.dart';
-import 'package:primedehealth/core/constants/navigators/routes.dart';
 import 'package:primedehealth/core/enums/app_state.dart';
 import 'package:primedehealth/core/error/failure.dart';
-import 'package:primedehealth/features/onboarding/domain/usecases/login_usecase.dart';
+import 'package:primedehealth/core/usecase.dart';
+import 'package:primedehealth/features/items/data/model/staff_model.dart';
+import 'package:primedehealth/features/items/domain/usecases/staffs_usecases.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
+import 'package:logger/logger.dart';
 
 @lazySingleton
-class OnboardingProvider extends ChangeNotifier {
-  OnboardingProvider({
-    required this.loginUsecase,
+class StaffsProvider extends ChangeNotifier {
+  StaffsProvider({
+    required this.staffUsecase,
   });
 
-  final LoginUsecase loginUsecase;
+  final StaffUsecase staffUsecase;
 
   Failure? failure;
-  bool? loginStatus;
-
+  List<StaffsModel>? allStaffs;
   String? messageResponse;
   AppState state = AppState.idle;
 
-  Future<bool> Login(BuildContext context,
-      {required String email, required String password}) async {
+  Future<bool> getStaffs(
+    BuildContext context,
+  ) async {
     state = AppState.busy;
     notifyListeners();
-    final result = await loginUsecase(
-        LoginUsecaseParams(email: email, password: password));
+    final result = await staffUsecase(NoParams());
     return result.fold(
       (l) {
         state = AppState.idle;
@@ -49,10 +50,10 @@ class OnboardingProvider extends ChangeNotifier {
           () {
             state = AppState.idle;
             notifyListeners();
-            Navigator.pushReplacementNamed(context, RouteName.home);
           },
         );
-        loginStatus = r;
+
+        allStaffs = r;
         return true;
       },
     );
